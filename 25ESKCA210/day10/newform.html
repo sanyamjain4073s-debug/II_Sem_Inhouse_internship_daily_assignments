@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regisration form </title>
+    <link rel="stylesheet" href="newForm.css">
+</head>
+<body>
+    <form action="newForm.php" method="POST">
+        <div>
+            <h2>Registration Form</h2>
+            <p>Submit the form for registration </p>
+            <label>
+                Name: 
+            <br>
+            <input type="text" name="txtName" placeholder="enter name" class="rounded"/>
+            </label>
+            <br><br>
+            <label>
+                Roll NO: 
+            <br>
+            <input type="text" name="txtrollno" placeholder="enter roll no." class="rounded"/>
+            </label>
+            <br><br>
+            <table cellspacing = "2px;">
+                <tr>
+                    <td>
+                        <label>
+                            Branch:
+                        </label>
+                        <br>
+                        <select name="Branch" id="branch" >
+                            <option value="Branch">Branch</option>
+                            <option value="AI">AI</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IOT">IOT</option> 
+                        </select>
+                    </td>        
+                    <td>         
+                        <label>
+                            CGPA:
+                        </label> 
+                        <br>
+                        <input type="text" name="cgpa" placeholder="enter cgpa" />      
+                    </td> 
+                </tr>
+            </table>
+            
+            <label>
+                Phone number:
+                <br>
+                <input type="text" name="txtphone_no" placeholder="enter phone no."/>
+            </label>
+            
+            <br><br>
+            <label>
+                Password:
+                <input type="password" id="pwdpassword" name="pwdpassword"/>
+            </label> 
+            <br><br>
+            <input type="submit" id="btnSubmit" />
+            <input type="reset"  id="btnclear" value="clear" />         
+        </div>
+    </form>
+</body>
+</html>
