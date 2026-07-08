@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regisration form </title>
+    <link rel="stylesheet" href="newregistrationform.css">
+</head>
+<body>
+    <form action="newregistrationform.php" method="POST" enctype="multipart/form-data">
+        <div>
+            <b><h2>Registration Form</h2></b>
+            <p>Submit the form for registration </p>
+            <label>
+                Name: 
+            <br>
+            <input type="text" id="txtName" name="Name" placeholder="enter name" class="rounded"/>
+            </label>
+            <br><br>
+            <label>
+                Email Address: 
+            <br>
+            <input type="text" id="txtEmail" name="Email" placeholder="enter email address" class="rounded"/>
+            </label>
+            <br><br>
+            <table cellspacing = "2px;">
+                <tr>
+                    <td>
+                        <label>
+                            Phone Number:
+                        </label>
+                        <br>
+                        <input type="text" id="txtNumber" name="phoneNumber" placeholder="enter phone number" />
+                    </td>        
+                    <td>         
+                        <label>
+                            Birth Date:
+                        </label> 
+                        <br>
+                        <input type="date" id="date" name="birthDate" placeholder="dd/mm/yyyy" />      
+                    </td> 
+                </tr>
+            </table>
+            <p>Gender:</p>
+            <label for="chkFemale">Female</label>
+            <input type="radio" id="chkFemale" name="gender" />
+            <label for="chkMale">Male</label>
+            <input type="radio" id="chkMale" name="gender" />
+            <label for="chkTransgender">Transgender</label>
+            <input type="radio" id="chkTransgender" name="gender" />
+            <label for="chkOther">prefer not to say</label>
+            <input type="radio" id="chkOther" name="gender" />
+            <br><br>
+            <label>
+                Address:
+                <br>
+                <input type="text" id="txtaddress" name="address" placeholder="enter plot no."/>
+                <br>
+                <input type="text" id="txtaddress" name="address"  placeholder="enter street address"/>
+            </label>
+            <br>
+            <br>
+            <label for="country">Country: </label>
+            <select name="country" id="country" name="country" placeholder="country" >
+                <option value="Country" >Country</option>
+                <option value="Australia" >Australia</option>
+                <option value="Berlin" >Berlin</option>
+                <option value="China" >China</option>
+                <option value="India" >India</option>
+                <option value="Usa" >Usa</option>
+                <option value="Japan" >Japan</option>
+                <option value="England" >England</option>
+                <option value="Mexico" >Mexico</option>
+                <option value="Hong Kong" >Hong Kong</option>
+            </select> 
+            <br><br>
+            <input type="file" name="myFile" accept="image/*" required>
+            <button type="submit">Upload</button>
+            <br><br>
+            <label>
+                Password:
+                <input type="password" id="pwdpassword" name="pwdpassword"/>
+            </label> 
+            <br><br>
+            <label>
+                Confirm Password:
+                <input type="password" id="pwdconfirmpassword" name="pwdconfirmpassword"/>
+            </label> 
+            <br><br>
+            <input type="submit" id="btnSubmit" />
+            <input type="reset"  id="btnclear" value="clear" />         
+        </div>
+    </form>
+</body>
+</html>
