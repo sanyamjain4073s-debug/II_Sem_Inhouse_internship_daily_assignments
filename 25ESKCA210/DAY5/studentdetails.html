@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Search</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-4">
+
+    <h2 class="text-center mb-4">Student Details</h2>
+
+    <input type="text"
+           id="search"
+           class="form-control mb-4"
+           placeholder="Search Student">
+
+    <div class="row" id="students"></div>
+
+</div>
+
+<script>
+
+const cgpa = [9.1,8.7,9.5,8.8,9.0];
+
+fetch("https://jsonplaceholder.typicode.com/users")
+
+.then(response=>response.json())
+
+.then(data=>{
+
+    let html="";
+
+    for(let i=0;i<5;i++)
+    {
+
+        html +=`
+
+        <div class="col-md-4 mb-3 student-card">
+
+            <div class="card shadow">
+
+                <div class="card-body">
+
+                    <h4 class="student-name">${data[i].name}</h4>
+
+                    <button class="btn btn-primary showBtn">
+                    Show Details
+                    </button>
+
+                    <div class="details mt-3" style="display:none">
+
+                        <p><b>Email :</b> ${data[i].email}</p>
+
+                        <p><b>CGPA :</b> ${cgpa[i]}</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+    $("#students").html(html);
+
+});
+
+
+$(document).on("keyup","#search",function(){
+
+    let value=$(this).val().toLowerCase();
+
+    $(".student-card").each(function(){
+
+        let name=$(this).find(".student-name").text().toLowerCase();
+
+        if(name.includes(value))
+        {
+            $(this).show();
+        }
+        else
+        {
+            $(this).hide();
+        }
+
+    });
+
+});
+
+
+$(document).on("click",".showBtn",function(){
+
+    let details=$(this).next(".details");
+
+    details.toggle();
+
+    if(details.is(":visible"))
+    {
+        $(this).text("Hide Details");
+    }
+    else
+    {
+        $(this).text("Show Details");
+    }
+
+});
+
+</script>
+
+</body>
+</html>
