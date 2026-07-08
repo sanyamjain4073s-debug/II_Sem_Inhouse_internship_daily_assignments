@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color:rgb(149, 201, 207);
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+h2{
+    color: red;
+    text-align: center;
+}
+
+label{
+    font-weight:bold ;
+}
+
+#rounded{
+    border-radius: 15px;
+}
+
+div{
+    margin: 50px;
+    padding: 15px 15px 8px 8px;
+    background-color: #c4d7f2;
+    border: 5px solid black ;
+}
